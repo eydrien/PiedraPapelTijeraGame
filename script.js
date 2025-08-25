@@ -5,7 +5,7 @@
 
         // Choice mappings
         const choices = {
-            rock: { emoji: '🪨', name: 'Piedra' },
+            rock: { emoji: '🗿', name: 'Piedra' },
             paper: { emoji: '📄', name: 'Papel' },
             scissors: { emoji: '✂️', name: 'Tijera' }
         };
