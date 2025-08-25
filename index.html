@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>🎮 Piedra, Papel o Tijera</title>
+
+</head>
+<body>
+    <div class="container">
+        <h1>🎮 Piedra, Papel o Tijera</h1>
+        
+        <div class="score-board">
+            <div class="score-item">
+                <div class="score-label">Tu puntuación</div>
+                <div class="score-value" id="player-score">0</div>
+            </div>
+            <div class="score-item">
+                <div class="score-label">Bot</div>
+                <div class="score-value" id="bot-score">0</div>
+            </div>
+            <div class="score-item">
+                <div class="score-label">Empates</div>
+                <div class="score-value" id="ties">0</div>
+            </div>
+        </div>
+
+        <div class="game-choices">
+            <button class="choice-btn" data-choice="rock" title="Piedra">🗿</button>
+            <button class="choice-btn" data-choice="paper" title="Papel">📄</button>
+            <button class="choice-btn" data-choice="scissors" title="Tijera">✂️</button>
+        </div>
+
+        <div class="game-result">
+            <div id="game-display" class="hidden">
+                <div class="choices-display">
+                    <div class="player-choice">
+                        <div class="choice-label">Tú</div>
+                        <div class="choice-emoji" id="player-emoji"></div>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="bot-choice">
+                        <div class="choice-label">Bot</div>
+                        <div class="choice-emoji" id="bot-emoji"></div>
+                    </div>
+                </div>
+                <div class="result-text" id="result-message"></div>
+            </div>
+            <div id="initial-message">
+                <p style="font-size: 1.2rem; opacity: 0.8;">¡Elige tu jugada para comenzar!</p>
+                <p style="font-size: 1rem; opacity: 0.6; margin-top: 10px;">Piedra vence a Tijera • Papel vence a Piedra • Tijera vence a Papel</p>
+            </div>
+        </div>
+
+        <button class="reset-btn" onclick="resetGame()">🔄 Reiniciar Juego</button>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
