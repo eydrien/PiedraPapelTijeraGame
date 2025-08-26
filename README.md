@@ -98,9 +98,7 @@ PiedraPapelTijeraGame/
 
 ## 🔮 Futuras Implementaciones
 - Migrar a **Nginx** como servidor web (puerto 80)  
-- Configuración de **HTTPS** con Certbot/Let's Encrypt  
-- Empaquetado en **Docker** para despliegue más flexible  
-- Opción multijugador con WebSockets  
+
 
 ---
 
@@ -109,7 +107,7 @@ PiedraPapelTijeraGame/
 - Si se cierra la sesión SSH/Session Manager, el servidor se detiene.  
   - Se puede usar:  
     ```bash
-    nohup python3 -m http.server 8000 &
+    nohup python3 -m http.server 8000 
     ```  
     para dejarlo corriendo en segundo plano.
     se puede cargar cualquier proyecto sencillo estatico al levantar el servidor de python
