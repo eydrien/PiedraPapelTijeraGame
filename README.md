@@ -110,8 +110,14 @@ PiedraPapelTijeraGame/
     ```bash
     nohup python3 -m http.server 8000 &
     ```  
-    para dejarlo corriendo en segundo plano.  
-- El proyecto actualmente no tiene persistencia de datos ni backend real.  
+    para dejarlo corriendo en segundo plano.
+    se puede cargar cualquier proyecto sencillo estatico al levantar el servidor de python
+- El proyecto actualmente no tiene persistencia de datos ni backend real.
+
+- Recomendacion, en el grupo de seguridad no debe quitacer el que trabaja en el puerto 22 ssh. ya q sin eso no se puede conectar la instanacia
+- Tampoco es recomendable cambiar el nombre mientras esta corriendo la instancia ya que puede generar errores inesperados. 
+- Si se cierra la sesión SSH/Session Manager, el servidor se detiene.  
+  
 
 ---
 ✍️ **Autor:** [eydrien](https://github.com/eydrien)  
