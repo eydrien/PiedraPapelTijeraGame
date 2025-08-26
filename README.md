@@ -23,6 +23,7 @@ Aplicación **HTML, CSS y JavaScript Vanilla** con las siguientes característic
 - **Almacenamiento:** Sin base de datos (lógica en memoria)  
 
 ---
+<img width="1341" height="854" alt="image" src="https://github.com/user-attachments/assets/ae830b06-6977-4fe0-ac45-07be507c6655" />
 
 ## 🚀 Configuración de AWS EC2
 
