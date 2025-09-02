@@ -1,4 +1,6 @@
 # ✊✋✌️ Piedra, Papel o Tijera - Deployment en AWS EC2
+![AWS EC2](https://img.shields.io/badge/deploy-AWS%20EC2-orange?logo=amazon-aws)
+
 
 Una aplicación web simple del clásico juego **Piedra, Papel o Tijera**, desplegada en **Amazon EC2** usando **Python HTTP Server**.
 
