@@ -86,14 +86,43 @@ http://TU-IP-PUBLICA:8000
 ```
 
 ---
+## ⚙️ Configurar automatización básica con GitHub Actions
+
+Para asegurarnos de que la aplicación se valide automáticamente cada vez que se suben cambios al repositorio, podemos usar **GitHub Actions**.
+
+### Pasos principales:
+
+1. **Crear una carpeta de workflows**  
+   En la raíz del proyecto, crea la ruta:
+```bash
+.github/workflows/
+```  
+
+2. **Crear un workflow simple**  
+Dentro de esa carpeta, crea un archivo llamado `ci.yml`.  
+Este archivo define las acciones que se ejecutarán de forma automática cuando hagas un *push* o un *pull request* a la rama principal (`main`).  
+
+3. **Configurar validaciones básicas**  
+Según la tecnología del proyecto, puedes incluir pasos como:  
+- **Instalar dependencias** (ej: `npm install` si usas Node.js, o `pip install -r requirements.txt` en Python).  
+- **Ejecutar pruebas automáticas** (si tienes un directorio `test/` con pruebas).  
+- **Verificar sintaxis** de tu código (ej: `eslint` para JS, `htmlhint` para HTML). 
+---
 
 ## 📁 Estructura del Proyecto
 ```
 PiedraPapelTijeraGame/
-├── index.html        # Interfaz principal del juego
-├── style.css         # Estilos básicos
-├── script.js         # Lógica del juego
-└── README.md         # Este archivo
+├── .github/
+│   └── workflows/
+│       └── javascript.yml        # Workflow de GitHub Actions (automatización básica)
+│
+├── test/                 # Carpeta reservada para pruebas (futuro)
+│   └── basic.test.js     # Ejemplo de test (placeholder)
+│
+├── index.html            # Interfaz principal del juego
+├── style.css             # Estilos básicos
+├── script.js             # Lógica del juego
+└── README.md             # Información y documentación del proyecto
 ```
 
 ---
