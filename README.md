@@ -1,6 +1,7 @@
 # ✊✋✌️ Piedra, Papel o Tijera - Deployment en AWS EC2
 ![AWS EC2](https://img.shields.io/badge/deploy-AWS%20EC2-orange?logo=amazon-aws)
 ![JavaScript CI](https://github.com/eydrien/PiedraPapelTijeraGame/workflows/JavaScript%20CI/badge.svg)
+![Docker](https://img.shields.io/badge/Docker-Ready-blue?logo=docker)
 
 Una aplicación web simple del clásico juego **Piedra, Papel o Tijera**, desplegada en **Amazon EC2** usando **Python HTTP Server**.
 
@@ -84,6 +85,25 @@ python3 -m http.server 8000
 ```
 http://TU-IP-PUBLICA:8000
 ```
+---
+## 📁 Estructura del Proyecto
+```
+PiedraPapelTijeraGame/
+├── .github/
+│   └── workflows/
+│       └── javascript.yml        # Workflow de GitHub Actions (automatización básica)
+│
+├── test/                 # Carpeta reservada para pruebas (futuro)
+│   └── basic.test.js     # Ejemplo de test (placeholder)
+│
+├── Dockerfile
+├── .dockerignore
+│
+├── index.html            # Interfaz principal del juego
+├── style.css             # Estilos básicos
+├── script.js             # Lógica del juego
+└── README.md             # Información y documentación del proyecto
+```
 
 ---
 ## ⚙️ Configurar automatización básica con GitHub Actions
@@ -109,21 +129,58 @@ Según la tecnología del proyecto, puedes incluir pasos como:
 - **Verificar sintaxis** de tu código (ej: `eslint` para JS, `htmlhint` para HTML). 
 ---
 
-## 📁 Estructura del Proyecto
-```
-PiedraPapelTijeraGame/
-├── .github/
-│   └── workflows/
-│       └── javascript.yml        # Workflow de GitHub Actions (automatización básica)
-│
-├── test/                 # Carpeta reservada para pruebas (futuro)
-│   └── basic.test.js     # Ejemplo de test (placeholder)
-│
-├── index.html            # Interfaz principal del juego
-├── style.css             # Estilos básicos
-├── script.js             # Lógica del juego
-└── README.md             # Información y documentación del proyecto
-```
+## 🐳 Containerización con Docker
+
+Otra forma de desplegar tu aplicación es usando **Docker**, lo que permite empacarla en un contenedor y ejecutarla en cualquier entorno.  
+
+### Pasos principales:
+
+1. **Tener instalado Docker**  
+   Asegúrate de tener Docker instalado en tu sistema.  
+
+2. **Crear los archivos necesarios**  
+   En la raíz del proyecto, crea los archivos:  
+   - `Dockerfile`  
+   - `.dockerignore`  
+
+3. **Configurar el `Dockerfile`**  
+   Ejemplo básico para servir tu aplicación con **Nginx**:  
+
+   ```dockerfile
+   FROM nginx:alpine
+   COPY . /usr/share/nginx/html/
+   EXPOSE 80
+   CMD ["nginx", "-g", "daemon off;"]
+   ```
+
+4. **Configurar el `.dockerignore`**  
+   Indica los archivos o carpetas que no quieres copiar dentro del contenedor:  
+
+   ```
+   node_modules
+   .git
+   .env
+   *.md
+   .github
+   tests
+   ```
+
+5. **Construir la imagen y crear el contenedor**  
+   En tu terminal favorita:  
+
+   - Construir la imagen:  
+     ```bash
+     docker build -t nombre-mi-app .
+     ```
+
+   - Crear y ejecutar el contenedor:  
+     ```bash
+     docker run -p 8080:PUERTO_SEGUN_TECH nombre-mi-app
+     ```
+
+   > ⚠️ Cambia `PUERTO_SEGUN_TECH` por el puerto real de tu aplicación (ejemplo: `80` si usas Nginx).
+
+
 
 ---
 
